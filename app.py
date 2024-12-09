@@ -1,10 +1,15 @@
 from flask import Flask, render_template, request, jsonify
 import requests
-import os  # Para acceder a las variables de entorno
+import os
+from dotenv import load_dotenv  # Importa load_dotenv
+
+# Carga las variables de entorno desde el archivo .env
+load_dotenv()
 
 app = Flask(__name__)
 
-API_KEY = os.getenv('API_KEY')  # Obtiene la API Key desde las variables de entorno
+# Obtiene la clave API desde la variable de entorno
+API_KEY = os.getenv('API_KEY')  # La clave de la API es 'API_KEY' en el archivo .env
 BASE_URL = "https://api.themoviedb.org/3"
 
 def obtener_recomendaciones(genero):
