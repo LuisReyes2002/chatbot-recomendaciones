@@ -1,9 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    text-align: center;
-    margin: 20px;
-    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); /* Fondo degradado */
 }
 
 #app {
@@ -16,7 +19,7 @@ body {
 }
 
 h1 {
-    color: #444;
+    color: #fff;  /* Color blanco para el título */
 }
 
 .filter {
@@ -24,17 +27,18 @@ h1 {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #573b8a;  /* Fondo de botón morado */
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: 0.2s ease-in-out;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #6d44b8;  /* Color de fondo al pasar el mouse */
 }
 
 #resultados {
