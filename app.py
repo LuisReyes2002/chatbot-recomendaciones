@@ -34,4 +34,5 @@ def recomendar():
     return jsonify(peliculas)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Usa el puerto asignado por Render
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
