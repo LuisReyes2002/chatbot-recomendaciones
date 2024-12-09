@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Chatbot de Películas</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Recomendador de Películas 🎥</h1>
+        <label for="genero">Elige un género:</label>
+        <select id="genero">
+            <option value="28">Acción</option>
+            <option value="35">Comedia</option>
+            <option value="18">Drama</option>
+            <option value="27">Terror</option>
+        </select>
+        <button onclick="recomendar()">Recomendar</button>
+        <div id="resultados"></div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
