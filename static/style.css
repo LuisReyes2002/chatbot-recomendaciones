@@ -16,9 +16,6 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;  /* Centra el contenido dentro del contenedor */
 }
 
 h1 {
@@ -28,7 +25,6 @@ h1 {
 .filter {
     margin: 15px 0;
 }
-
 button {
     background-color: #573b8a;  /* Fondo de botón morado */
     color: white;
@@ -39,7 +35,7 @@ button {
     font-size: 16px;
     width: 60%;  /* Ancho del botón centrado */
     transition: 0.2s ease-in-out;
-    margin-top: 20px; /* Espaciado desde arriba */
+    margin: 20px auto;  /* Esto centra el botón */
 }
 
 button:hover {
