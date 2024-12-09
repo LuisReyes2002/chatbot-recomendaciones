@@ -31,4 +31,51 @@ function recomendar() {
             resultadosDiv.innerHTML = '<p>No se encontraron películas.</p>';
         }
     });
+    let currentSlide = 0;
+
+const fondoImagens = [
+    "fondo1.jpg", "fondo2.jpg", "fondo3.jpg", "fondo4.jpg", "fondo5.jpeg"
+];
+
+// Función para mover el carrusel
+function moveCarousel() {
+    const carousel = document.getElementById("carouselItems");
+    currentSlide = (currentSlide + 1) % fondoImagens.length;
+    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+// Función para recomendar películas
+function recomendar() {
+    const genero = document.getElementById("genero").value;
+    const anio = document.getElementById("anio").value;
+    const actor = document.getElementById("actor").value;
+
+    const url = `/recomendar?genero=${genero}&anio=${anio}&actor=${actor}`;
+    
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            // Mostrar las películas recomendadas
+            const resultadosDiv = document.getElementById("resultados");
+            resultadosDiv.innerHTML = data.map(pelicula => `
+                <div>
+                    <h3>${pelicula.titulo}</h3>
+                    <img src="https://image.tmdb.org/t/p/w500${pelicula.poster}" alt="${pelicula.titulo}">
+                </div>
+            `).join("");
+        });
+
+    // Reemplazar las imágenes del fondo del carrusel
+    const carouselItems = document.getElementById("carouselItems");
+    carouselItems.innerHTML = fondoImagens.map(fondo => `
+        <div class="carousel-item">
+            <img src="${fondo}" alt="Fondo">
+        </div>
+    `).join("");
+
+    setInterval(moveCarousel, 3000); // Mover el carrousel cada 3 segundos
+}
+
+moveCarousel(); // Iniciar el movimiento al cargar la página
+
 }
