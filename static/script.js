@@ -13,7 +13,7 @@ function recomendar() {
     .then(response => response.json())
     .then(peliculas => {
         const resultadosDiv = document.getElementById('resultados');
-        resultadosDiv.innerHTML = ''; // Limpiamos resultados previos
+        resultadosDiv.innerHTML = ''; 
 
         if (peliculas.length > 0) {
             peliculas.forEach(pelicula => {
