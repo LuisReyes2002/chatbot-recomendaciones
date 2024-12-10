@@ -47,6 +47,7 @@ button:hover {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+    color: white;
 }
 
 #resultados img {
